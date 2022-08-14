@@ -1,7 +1,7 @@
-import { QueryClient } from '@tanstack/react-query';
+import { QueryClient } from 'react-query';
 
 // import { createStandaloneToast } from '@chakra-ui/react';
-// import { theme } from '../theme';
+// import { theme } from '../eme
 
 // const toast = createStandaloneToast({ theme });
 
