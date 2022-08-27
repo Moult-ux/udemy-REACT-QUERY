@@ -21,10 +21,12 @@ export function useStaff(): UseStaff {
   // for filtering staff by treatment
   const [filter, setFilter] = useState("all");
 
-  // TODO: get data from server via useQuery
   const emptyStaff = [];
 
-  const { data: staff = emptyStaff } = useQuery(queryKeys.staff, getStaff);
+  const { data: staff = emptyStaff } = useQuery(queryKeys.staff, getStaff, {
+    select:
+      filter === "all" ? undefined : (data) => filterByTreatment(data, filter),
+  });
 
   return { staff, filter, setFilter };
 }
